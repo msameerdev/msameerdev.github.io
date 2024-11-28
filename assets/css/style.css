@@ -579,6 +579,13 @@ pre code {
   .container {
     max-width: 960px;
   }
+  .custom-navbar .navbar-nav:nth-child(1){
+    width: 30%;
+  }
+  .custom-navbar .navbar-nav:nth-child(3){
+    width: 30%;
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -11719,12 +11726,12 @@ pre .code {
   .about-section .about-card:nth-child(1) {
     border-right: 0;
   }
-}
-
-@media screen and (max-width: 768px){
   .contact .contact-info-card .card-info .text-muted{
     word-wrap: break-word;
   }
+}
+
+@media screen and (max-width: 768px){
   .portfolio .filters{
     flex-wrap: wrap;
   }
