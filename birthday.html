@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Happy Birthday!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Hifza</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: radial-gradient(circle at top left, #fbc2eb, #f78ca0);
+      background: linear-gradient(120deg, #fbc2eb, #f78ca0);
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
-      overflow: hidden;
+      color: white;
       height: 100vh;
-      width: 100%;
-      color: #fff;
-      position: relative;
+      overflow: hidden;
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
+      text-align: center;
+      position: relative;
     }
-    h1 ,h2{
-      font-size: 2rem;
-      margin-top: 60px;
-      z-index: 100;
-      animation: zoomIn 1s ease-out forwards;
-      text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
-    }
-    h2{
-        margin-top: 10px;
-    }
-    .message {
+
+    #start-btn {
+      padding: 15px 30px;
       font-size: 1.2rem;
-      margin: 40px;
-      z-index: 100;
-      animation: fadeIn 2s ease-in-out 1s forwards;
-      opacity: 0;
-    }
-    .cake {
-      font-size: 4rem;
-      animation: bounce 1.5s infinite alternate;
-      margin-top: 50px;
-      z-index: 100;
-    }
-    .music-btn {
-      padding: 10px 20px;
       background: #fff;
-      width: fit-content;
-      margin: 0 auto;
-      margin-top: 20px;
       color: #f78ca0;
       border: none;
-      z-index: 100;
-      font-weight: bold;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
+      border-radius: 30px;
       box-shadow: 0 0 10px #fff;
-      animation: fadeIn 2s ease-in-out 2s forwards;
-      opacity: 0;
+      cursor: pointer;
+      z-index: 1000;
     }
-    .music-btn:hover {
-      background: #ffdef0;
+
+    #countdown {
+      font-size: 5rem;
+      font-weight: bold;
+      display: none;
+      z-index: 1000;
+      animation: zoomIn 1s ease-in-out infinite alternate;
     }
 
     @keyframes zoomIn {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      0% { transform: scale(0.8); opacity: 0.7; }
+      100% { transform: scale(1.1); opacity: 1; }
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    #main-content {
+      display: none;
+      z-index: 100;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 10px;
+    }
+
+    .cake {
+      font-size: 3rem;
+      margin: 20px 0;
+      animation: bounce 2s infinite alternate;
+    }
+
+    .message {
+      font-size: 1.1rem;
+      margin: 10px auto;
+      max-width: 90%;
     }
 
     @keyframes bounce {
       0% { transform: translateY(0); }
-      100% { transform: translateY(-10px); }
+      100% { transform: translateY(-20px); }
+    }
+
+    .balloon, .confetti, .star {
+      position: absolute;
+      z-index: 1;
     }
 
     .balloon {
-      position: absolute;
       bottom: -100px;
-      width: 60px;
-      height: 80px;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      animation: float 6s ease-in-out infinite;
-      opacity: 0.8;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: pink;
+      animation: float 6s infinite ease-in-out;
     }
 
     @keyframes float {
       0% { bottom: -100px; transform: translateX(0); }
-      100% { bottom: 110%; transform: translateX(-30px); }
+      100% { bottom: 110vh; transform: translateX(-30px); }
     }
 
     .confetti {
-      position: absolute;
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background-color: yellow;
       top: -10px;
@@ -107,74 +112,104 @@
     }
 
     .star {
-      position: absolute;
-      font-size: 1.2rem;
-      animation: twinkle 2s infinite ease-in-out;
+      font-size: 1.4rem;
       color: white;
-      display: none;
+      animation: twinkle 2s infinite ease-in-out;
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
+      0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
     }
 
-    @media screen and (max-width: 400px) {
-      h1 { font-size: 1.6rem; }
-      .cake { font-size: 3rem; }
-      .music-btn { font-size: 0.9rem; }
+    @media screen and (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      .cake { font-size: 2.3rem; }
+      .message { font-size: 1rem; }
+      #countdown { font-size: 3.5rem; }
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday! 🎉</h1>
-  <h2>✨ Hifza ✨</h2>
-  <div class="cake">🕯️🎂🎂🎂🕯️</div>
-  <p class="message">On your special day, I just want to say how grateful I am to have a friend like you. I wish you a year filled with countless smiles and delightful surprises. Happy Birthday! 💖🎂</p>
-  <button class="music-btn" onclick="playMusic()">🎵 Play Birthday Song</button>
 
-  <!-- Balloons -->
+  <button id="start-btn">🎉 Start Your Birthday 🎉</button>
+  <div id="countdown">10</div>
+
+  <div id="main-content">
+    <h1>🎉 Happy Birthday! 🎉</h1>
+    <h2>✨ Hifza ✨</h2>
+    <div class="cake">🎂🕯️🎂🕯️🎂</div>
+    <p class="message">
+      On your special day, I just want to say how grateful I am to have a friend like you.
+      I wish you a year filled with countless smiles and delightful surprises. 💖
+    </p>
+  </div>
+
+  <audio id="countdown-audio" src="10-1-countdown.mp3"></audio>
+  <audio id="birthday-audio" src="hb-sound.mp3" loop></audio>
+
   <script>
-    for (let i = 0; i < 15; i++) {
-      const balloon = document.createElement("div");
-      balloon.className = "balloon";
-      balloon.style.left = Math.random() * 100 + "vw";
-      balloon.style.background = `hsl(${Math.random()*360}, 70%, 70%)`;
-      balloon.style.animationDuration = 5 + Math.random() * 3 + "s";
-      document.body.appendChild(balloon);
-    }
+    const startBtn = document.getElementById("start-btn");
+    const countdownEl = document.getElementById("countdown");
+    const mainContent = document.getElementById("main-content");
+    const countdownAudio = document.getElementById("countdown-audio");
+    const birthdayAudio = document.getElementById("birthday-audio");
 
-    // Confetti
-    function createConfetti() {
-      const confetti = document.createElement("div");
-      confetti.className = "confetti";
-      confetti.style.left = Math.random() * window.innerWidth + "px";
-      confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 70%)`;
-      confetti.style.animationDuration = 3 + Math.random() * 2 + "s";
-      document.body.appendChild(confetti);
-      setTimeout(() => confetti.remove(), 5000);
-    }
-    setInterval(createConfetti, 200);
+    const countdownNumbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    const delayPerNumber = 1500; // 1.50 seconds per number (based on audio)
 
-    // Stars
-    for (let i = 0; i < 20; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.innerText = "✨";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.top = Math.random() * 100 + "vh";
-      star.style.animationDuration = 2 + Math.random() * 2 + "s";
-      document.body.appendChild(star);
-    }
+    startBtn.addEventListener("click", () => {
+      startBtn.style.display = "none";
+      countdownEl.style.display = "block";
+      countdownAudio.play();
 
-    // Music Play
-    let audio;
-    function playMusic() {
-      if (!audio) {
-        audio = new Audio("hb-sound.mp3");
-        audio.loop = true;
+      let index = 0;
+      countdownEl.textContent = countdownNumbers[index];
+
+      const interval = setInterval(() => {
+        index++;
+        if (index >= countdownNumbers.length) {
+          clearInterval(interval);
+          countdownEl.style.display = "none";
+          mainContent.style.display = "block";
+          birthdayAudio.play();
+          startDecorations();
+        } else {
+          countdownEl.textContent = countdownNumbers[index];
+        }
+      }, delayPerNumber);
+    });
+
+    function startDecorations() {
+      for (let i = 0; i < 15; i++) {
+        const balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
+        balloon.style.animationDuration = 6 + Math.random() * 4 + "s";
+        document.body.appendChild(balloon);
       }
-      audio.play();
+
+      setInterval(() => {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        confetti.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+      }, 150);
+
+      for (let i = 0; i < 10; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.innerText = "✨";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.animationDuration = 2 + Math.random() * 2 + "s";
+        document.body.appendChild(star);
+      }
     }
   </script>
 </body>
